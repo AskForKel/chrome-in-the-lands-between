@@ -1,0 +1,121 @@
+{
+  "sheet": "systems",
+  "purpose": "Every system the mashup touches. One row per system.",
+  "columns": [
+    "id",
+    "what",
+    "detail"
+  ],
+  "rows": [
+    {
+      "id": "tiers",
+      "what": "Tier scaling",
+      "detail": "common x1.0, rare x1.25, epic x1.5, legendary x1.75 applied to a chrome row's numbers"
+    },
+    {
+      "id": "bench",
+      "what": "Ripperdoc bench",
+      "detail": "Opens only while resting at a Site of Grace. Lists every chrome row grouped by slot, with its tier, cost and effect text"
+    },
+    {
+      "id": "slots",
+      "what": "Slot limits",
+      "detail": "One piece per slot (9 slots), like Cyberpunk. Any piece can be swapped or removed at the bench for free"
+    },
+    {
+      "id": "capacity",
+      "what": "Capacity",
+      "detail": "Each piece costs capacity points by slot and tier; the player's capacity grows with level"
+    },
+    {
+      "id": "charge",
+      "what": "Charge meter",
+      "detail": "0-100, refills 6 per second, spent by active chrome (Sandevistan, arm cannon, camo, blood pump)"
+    },
+    {
+      "id": "cooldowns",
+      "what": "Cooldowns",
+      "detail": "Per row, counted in seconds, shown on the bench and in the HUD"
+    },
+    {
+      "id": "key.os",
+      "what": "OS key",
+      "detail": "Q - activates the installed operating system; opens the hack menu when the Cyberdeck is installed"
+    },
+    {
+      "id": "key.arms",
+      "what": "Arms key",
+      "detail": "E - toggles the installed arms implant onto the currently equipped weapon, or fires the arm cannon"
+    },
+    {
+      "id": "key.integ",
+      "what": "Integumentary and circulatory key",
+      "detail": "X - fires the installed active piece: Optical Camo or Blood Pump"
+    },
+    {
+      "id": "key.util",
+      "what": "Utility key",
+      "detail": "V - toggles Kiroshi markers on and off"
+    },
+    {
+      "id": "key.bench",
+      "what": "Bench key",
+      "detail": "F - opens the bench, only while at a Site of Grace"
+    },
+    {
+      "id": "passive",
+      "what": "Passive trigger",
+      "detail": "Always on while installed; no input"
+    },
+    {
+      "id": "none",
+      "what": "Not usable",
+      "detail": "Reserved for rows marked not-possible"
+    },
+    {
+      "id": "hud",
+      "what": "Cyberware HUD",
+      "detail": "ImGui panel drawn over the game: charge meter, installed chrome by slot, active timers and cooldowns"
+    },
+    {
+      "id": "bench_panel",
+      "what": "Bench panel art",
+      "detail": "Drawn by us in the game's frame: a Cyberpunk-style ripperdoc page. No Cyberpunk assets are shipped"
+    },
+    {
+      "id": "quickhack",
+      "what": "Quickhack menu",
+      "detail": "Three hacks while the Cyberdeck is the OS: Overturn turns the target on its own squad, Overload lands a lightning burst, Blind staggers it"
+    },
+    {
+      "id": "target_select",
+      "what": "Target selection",
+      "detail": "The nearest hostile within 30m in front of the camera; the HUD marks the picked target"
+    },
+    {
+      "id": "timescale_stack",
+      "what": "Bullet-time stacking",
+      "detail": "Only one bullet-time source is active at a time; a stronger one overrides. Nanorelays extends the duration of any of them by 50%"
+    },
+    {
+      "id": "revive",
+      "what": "Once-per-rest effects",
+      "detail": "Second Heart and Biomonitor arm themselves on rest at a Site of Grace and fire once"
+    },
+    {
+      "id": "persistence",
+      "what": "Save file",
+      "detail": "Our own file under the mod folder, written on install, swap and rest: which chrome sits in which slot, chosen tiers and remaining once-per-rest charges"
+    },
+    {
+      "id": "input",
+      "what": "Input",
+      "detail": "Only our own keys are read; the game's own bindings are never remapped, and keys are blanked for the game only while a panel is open"
+    },
+    {
+      "id": "safety",
+      "what": "Online safety",
+      "detail": "Never touched: the mod only ever runs in the offline session Melty launches, with Easy Anti-Cheat off"
+    }
+  ]
+}

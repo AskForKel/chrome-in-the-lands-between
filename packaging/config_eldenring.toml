@@ -1,0 +1,15 @@
+# Read by Mod Engine 2 (the loader Melty installs for Elden Ring).
+# Our native is listed here so the game loads it on start - nothing is copied by hand.
+[modengine]
+debug = false
+external_dlls = [
+    "mod\\ChromeInTheLandsBetween\\ChromeInTheLandsBetween.dll",
+]
+
+[extension.mod_loader]
+enabled = true
+loose_params = false
+mods = []
+
+[extension.scylla_hide]
+enabled = false

@@ -1,0 +1,714 @@
+{
+  "sheet": "chrome",
+  "purpose": "One row per piece of chrome. Every column filled. Each row becomes one struct in the DLL and one bench entry.",
+  "columns": [
+    "id",
+    "slot",
+    "name",
+    "tiers",
+    "cp",
+    "er",
+    "trigger",
+    "charge",
+    "cooldown",
+    "fidelity",
+    "primitive",
+    "needs_params"
+  ],
+  "slots": [
+    "frontal_cortex",
+    "operating_system",
+    "arms",
+    "hands",
+    "skeleton",
+    "nervous_system",
+    "integumentary",
+    "circulatory",
+    "legs"
+  ],
+  "tier_note": "Numbers in 'er' are the base (common) values; systems.json tiers scale them.",
+  "fidelity_values": [
+    "exact",
+    "adapted",
+    "not-possible"
+  ],
+  "rows": [
+    {
+      "id": "sandevistan",
+      "slot": "operating_system",
+      "name": "Sandevistan",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Slows time around you",
+      "er": "World time to 25% for 6s, you keep full speed",
+      "trigger": "key.os",
+      "charge": 40,
+      "cooldown": 12,
+      "fidelity": "exact",
+      "primitive": "timescale",
+      "needs_params": false
+    },
+    {
+      "id": "berserk",
+      "slot": "operating_system",
+      "name": "Berserk",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Rage: damage, armour, immune to stagger",
+      "er": "+35% damage, +40 poise, -25% damage taken, no stamina drain for 8s",
+      "trigger": "key.os",
+      "charge": 50,
+      "cooldown": 20,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "cyberdeck",
+      "slot": "operating_system",
+      "name": "Cyberdeck",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Run quickhacks on targets",
+      "er": "Target a hostile, pick one of three hacks: Overturn, Overload, Blind",
+      "trigger": "key.os",
+      "charge": 30,
+      "cooldown": 8,
+      "fidelity": "adapted",
+      "primitive": "target_hack",
+      "needs_params": false
+    },
+    {
+      "id": "memory_boost",
+      "slot": "frontal_cortex",
+      "name": "Memory Boost",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+XP",
+      "er": "+25% runes from kills",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "kiroshi",
+      "slot": "frontal_cortex",
+      "name": "Kiroshi Optics",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Highlights enemies, target info",
+      "er": "Hostiles within 40m get a marker and an HP readout",
+      "trigger": "key.util",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "hud_markers",
+      "needs_params": false
+    },
+    {
+      "id": "limbic",
+      "slot": "frontal_cortex",
+      "name": "Limbic System Enhancement",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+crit chance",
+      "er": "+15% crit chance",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "pain_editor",
+      "slot": "frontal_cortex",
+      "name": "Pain Editor",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Less damage taken at low health",
+      "er": "-30% damage taken below 30% HP",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "exact",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "visual_cortex",
+      "slot": "frontal_cortex",
+      "name": "Visual Cortex Support",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+crit damage",
+      "er": "+25% crit damage",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "self_ice",
+      "slot": "frontal_cortex",
+      "name": "Self-ICE",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Immune to hostile quickhacks",
+      "er": "Bleed, frost and poison build up 40% slower",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "gorilla_arms",
+      "slot": "arms",
+      "name": "Gorilla Arms",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Unarmed damage, force doors",
+      "er": "Unarmed damage x3 and huge poise damage",
+      "trigger": "key.arms",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "weapon_mod",
+      "needs_params": false
+    },
+    {
+      "id": "mantis_blades",
+      "slot": "arms",
+      "name": "Mantis Blades",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Fast bleed melee",
+      "er": "Equipped weapon gains fast bleed and +20% swing speed",
+      "trigger": "key.arms",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "weapon_mod",
+      "needs_params": false
+    },
+    {
+      "id": "monowire",
+      "slot": "arms",
+      "name": "Monowire",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Wide sweep, hits groups",
+      "er": "Equipped weapon gains +60% reach and hits everything in a wide arc",
+      "trigger": "key.arms",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "weapon_mod",
+      "needs_params": false
+    },
+    {
+      "id": "projectile_system",
+      "slot": "arms",
+      "name": "Projectile Launch System",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Arm cannon",
+      "er": "Fire a real explosive bolt from your arm",
+      "trigger": "key.arms",
+      "charge": 25,
+      "cooldown": 6,
+      "fidelity": "adapted",
+      "primitive": "spawn_bullet",
+      "needs_params": true
+    },
+    {
+      "id": "microgenerator",
+      "slot": "arms",
+      "name": "Microgenerator",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Shocks on hit",
+      "er": "Every 5th hit lands a lightning burst",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "on_hit_proc",
+      "needs_params": false
+    },
+    {
+      "id": "microrotors",
+      "slot": "hands",
+      "name": "Microrotors",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+attack speed",
+      "er": "+15% attack speed",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "smart_link",
+      "slot": "hands",
+      "name": "Smart Link",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Smart weapons track targets",
+      "er": "Ranged shots curve toward the locked target",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "projectile_steer",
+      "needs_params": false
+    },
+    {
+      "id": "titanium_bones",
+      "slot": "skeleton",
+      "name": "Titanium Bones",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+carry capacity",
+      "er": "+25% equip load",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "bionic_lungs",
+      "slot": "skeleton",
+      "name": "Bionic Lungs",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+stamina",
+      "er": "+30% stamina and faster recovery",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "dense_marrow",
+      "slot": "skeleton",
+      "name": "Dense Marrow",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+melee damage",
+      "er": "+20% melee damage",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "feen_x",
+      "slot": "skeleton",
+      "name": "Feen-X",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+armour",
+      "er": "+15% damage absorption",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "kerenzikov",
+      "slot": "nervous_system",
+      "name": "Kerenzikov",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Slow-mo when you dodge",
+      "er": "1.5s bullet-time when a dodge-roll starts",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 10,
+      "fidelity": "exact",
+      "primitive": "timescale",
+      "needs_params": false
+    },
+    {
+      "id": "synaptic_accelerator",
+      "slot": "nervous_system",
+      "name": "Synaptic Accelerator",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Slow-mo when combat starts",
+      "er": "2s bullet-time when combat starts",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 15,
+      "fidelity": "exact",
+      "primitive": "timescale",
+      "needs_params": false
+    },
+    {
+      "id": "reflex_tuner",
+      "slot": "nervous_system",
+      "name": "Reflex Tuner",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Slow-mo at low health",
+      "er": "2.5s bullet-time below 25% HP",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 25,
+      "fidelity": "exact",
+      "primitive": "timescale",
+      "needs_params": false
+    },
+    {
+      "id": "neofiber",
+      "slot": "nervous_system",
+      "name": "Neofiber",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+evasion",
+      "er": "+20% dodge invincibility",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "nanorelays",
+      "slot": "nervous_system",
+      "name": "Nanorelays",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Longer time dilation",
+      "er": "Every bullet-time lasts 50% longer",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "exact",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "subdermal_armor",
+      "slot": "integumentary",
+      "name": "Subdermal Armor",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "+armour",
+      "er": "-20% physical damage taken",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "optical_camo",
+      "slot": "integumentary",
+      "name": "Optical Camo",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Invisibility",
+      "er": "Enemies lose track of you for 8s",
+      "trigger": "key.integ",
+      "charge": 40,
+      "cooldown": 30,
+      "fidelity": "adapted",
+      "primitive": "stealth",
+      "needs_params": false
+    },
+    {
+      "id": "cataresist",
+      "slot": "integumentary",
+      "name": "Cataresist",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+elemental resistance",
+      "er": "-30% fire, lightning, holy and magic damage taken",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "grounding_plating",
+      "slot": "integumentary",
+      "name": "Grounding Plating",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "+shock resistance",
+      "er": "Immune to lightning stagger, -40% lightning damage",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stat_mod",
+      "needs_params": false
+    },
+    {
+      "id": "blood_pump",
+      "slot": "circulatory",
+      "name": "Blood Pump",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Instant heal",
+      "er": "Heal 40% HP on key",
+      "trigger": "key.integ",
+      "charge": 30,
+      "cooldown": 25,
+      "fidelity": "exact",
+      "primitive": "heal",
+      "needs_params": false
+    },
+    {
+      "id": "biomonitor",
+      "slot": "circulatory",
+      "name": "Biomonitor",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Auto-heal at low health",
+      "er": "Auto-heal 30% HP below 20% HP, once per rest",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "exact",
+      "primitive": "heal",
+      "needs_params": false
+    },
+    {
+      "id": "bioconductor",
+      "slot": "circulatory",
+      "name": "Bioconductor",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Heal on crit",
+      "er": "Crits heal 3% HP",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "on_hit_proc",
+      "needs_params": false
+    },
+    {
+      "id": "second_heart",
+      "slot": "circulatory",
+      "name": "Second Heart",
+      "tiers": [
+        "common",
+        "rare",
+        "epic",
+        "legendary"
+      ],
+      "cp": "Revive once",
+      "er": "Revive at 50% HP, once per rest",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "exact",
+      "primitive": "revive",
+      "needs_params": false
+    },
+    {
+      "id": "reinforced_tendons",
+      "slot": "legs",
+      "name": "Reinforced Tendons",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Double jump",
+      "er": "Jump again in mid-air",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "jump",
+      "needs_params": false
+    },
+    {
+      "id": "fortified_ankles",
+      "slot": "legs",
+      "name": "Fortified Ankles",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Higher jump",
+      "er": "+40% jump height",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "jump",
+      "needs_params": false
+    },
+    {
+      "id": "lynx_paws",
+      "slot": "legs",
+      "name": "Lynx Paws",
+      "tiers": [
+        "common",
+        "rare",
+        "epic"
+      ],
+      "cp": "Quieter movement",
+      "er": "Enemies notice you 50% slower",
+      "trigger": "passive",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "adapted",
+      "primitive": "stealth",
+      "needs_params": false
+    },
+    {
+      "id": "netwatch_netdriver",
+      "slot": "operating_system",
+      "name": "Netwatch Netdriver",
+      "tiers": [],
+      "cp": "Quickhacks spread between targets",
+      "er": "Cannot exist here: Elden Ring has no network, cameras or vehicles to hack",
+      "trigger": "none",
+      "charge": 0,
+      "cooldown": 0,
+      "fidelity": "not-possible",
+      "primitive": "none",
+      "needs_params": false
+    }
+  ]
+}

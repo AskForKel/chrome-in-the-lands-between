@@ -1,0 +1,158 @@
+{
+  "sheet": "hooks",
+  "purpose": "Every hook into the running game the chrome stands on. One row per hook. Nothing is used that is not listed here.",
+  "columns": [
+    "id",
+    "system",
+    "access",
+    "api",
+    "risk",
+    "verified"
+  ],
+  "rows": [
+    {
+      "id": "stat_mod",
+      "system": "PlayerGameData (level, attributes, runes, HP/FP/stamina maxima) and the damage pipeline",
+      "access": "read + write",
+      "api": "fromsoftware-rs eldenring crate; PlayerGameData fields; damage-hook on the character damage path",
+      "risk": "medium - writing maxima can desync the HUD",
+      "verified": false
+    },
+    {
+      "id": "damage_calc",
+      "system": "Damage apply / take on ChrIns",
+      "access": "read + hook",
+      "api": "hook the damage path; read and adjust incoming and outgoing values",
+      "risk": "medium - wrong offsets crash at combat start",
+      "verified": false
+    },
+    {
+      "id": "on_hit_proc",
+      "system": "Hit confirmation on the player's landed hits",
+      "access": "read",
+      "api": "same damage hook, player-as-attacker branch; counts hits for Microgenerator and crits for Bioconductor",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "timescale",
+      "system": "World time scaling",
+      "access": "write",
+      "api": "the game's time scale value, driven per frame; player-side speed kept at full",
+      "risk": "high - the engine runs game logic off this",
+      "verified": false
+    },
+    {
+      "id": "weapon_mod",
+      "system": "Equipped weapon behaviour (reach, arc, speed, bleed)",
+      "access": "read + write",
+      "api": "weapon behaviour fields on the player's equipped weapon instance",
+      "risk": "medium",
+      "verified": false
+    },
+    {
+      "id": "spawn_bullet",
+      "system": "Projectiles",
+      "access": "write",
+      "api": "CSBulletManager bullet spawn with a bullet row from the player's regulation.bin",
+      "risk": "medium - needs a param row; wrong row crashes",
+      "verified": false
+    },
+    {
+      "id": "projectile_steer",
+      "system": "Player projectiles in flight",
+      "access": "write",
+      "api": "steer an in-flight bullet toward the locked target each frame",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "chr_ins",
+      "system": "NPCs in the session",
+      "access": "read",
+      "api": "WorldChrMan character list: position, HP, hostility, distance for markers and targeting",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "chr_team",
+      "system": "NPC team / hostility",
+      "access": "write",
+      "api": "ChrIns team field - Overturn makes the target hostile to its own squad",
+      "risk": "medium - can leave an NPC permanently hostile to everything",
+      "verified": false
+    },
+    {
+      "id": "sp_effect",
+      "system": "Status effects already in the game (bleed, frost, lightning, poison, unseen form, heal)",
+      "access": "write",
+      "api": "apply an existing Elden Ring SpEffect by id from the player's vanilla params; no new params shipped",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "physics",
+      "system": "Player physics body (jump, velocity)",
+      "access": "read + write",
+      "api": "CSChrPhysicsModule position and velocity for double jump and jump height",
+      "risk": "high - the game applies its own gravity; the CS2 note records fall death from exactly this",
+      "verified": false
+    },
+    {
+      "id": "heal_revive",
+      "system": "Player HP and death flow",
+      "access": "write + hook",
+      "api": "HP write for Blood Pump and Biomonitor; the death flow for Second Heart",
+      "risk": "medium - reviving wrongly can leave the character stuck",
+      "verified": false
+    },
+    {
+      "id": "stealth",
+      "system": "Enemy awareness and player visibility",
+      "access": "write",
+      "api": "apply the game's own unseen-form effect for Optical Camo; slow the awareness build for Lynx Paws",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "input",
+      "system": "Keyboard and mouse",
+      "access": "read",
+      "api": "DirectInput GetDeviceState hook (the game never calls GetDeviceData); our keys only",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "ui",
+      "system": "Drawing over the game's frame",
+      "access": "write",
+      "api": "hudhook ImGui overlay in the D3D12 frame for the HUD, bench and hack menu",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "hud_markers",
+      "system": "On-screen markers on NPCs",
+      "access": "write",
+      "api": "ImGui draws projected from world positions read through chr_ins; no game UI touched",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "save",
+      "system": "Our own persistence file",
+      "access": "read + write",
+      "api": "plain JSON under the mod folder, written on install, swap and rest",
+      "risk": "low",
+      "verified": false
+    },
+    {
+      "id": "none",
+      "system": "Not used",
+      "access": "none",
+      "api": "reserved for rows marked not-possible",
+      "risk": "none",
+      "verified": true
+    }
+  ]
+}
