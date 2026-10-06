@@ -1,0 +1,21 @@
+[package]
+name = "chrome-in-the-lands-between"
+version = "0.1.0"
+edition = "2024"
+publish = false
+license = "MIT OR Apache-2.0"
+description = "Cyberpunk chrome inside Elden Ring: a ripperdoc bench at a Site of Grace"
+
+[lib]
+name = "ChromeInTheLandsBetween"
+crate-type = ["cdylib"]
+
+[dependencies]
+eldenring = "0.14.0"
+fromsoftware-shared = "0.14.0"
+hudhook = { version = "0.9.3", default-features = false, features = ["dx12"] }
+
+[profile.release]
+opt-level = 2
+lto = "thin"
+strip = false
