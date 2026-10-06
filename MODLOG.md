@@ -56,3 +56,15 @@ Journal:
               OPEN: the player's exact patch (2.7.1.0 or 2.7.1.1) - the built DLL targets 2.7.1.0's
               tables. Cyberpunk's own models/art are still out of scope: converting them needs the
               user's Cyberpunk install.
+  2026-10-06  Release automation. The package layout now lives in the repo (packaging/: the loader
+              config + the player README + release notes) and the workflow assembles the zip on the
+              runner, so every build is package-and-release from a clean machine, no local toolchain.
+              Pushing a tag publishes a GitHub release with the zip attached - that is the link Melty
+              consumes. v0.1.0 is out:
+              https://github.com/AskForKel/chrome-in-the-lands-between/releases/tag/v0.1.0
+              The published zip was downloaded back and read: it carries
+              mod/ChromeInTheLandsBetween/ChromeInTheLandsBetween.dll, the loader config listing it, and
+              the player README. Verified, not assumed - the first zip I built was missing the DLL.
+              Note for later: our config_eldenring.toml replaces the loader's own config for a player
+              who already has Mod Engine 2 mods. Fine for the tester; the README says to paste our one
+              external_dlls line into theirs instead before this goes public.
